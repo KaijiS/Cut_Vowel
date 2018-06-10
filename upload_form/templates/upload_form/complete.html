@@ -1,0 +1,21 @@
+{% extends "upload_form/base.html" %}
+
+{% block title %}アップロード完了{% endblock title %}
+{% block content %}
+    <div align="center">
+        <h1 align="center">アップロード完了</h1>
+        <!-- <input name="vowel" type="hidden" value="{{ vowel }}">
+        <a href="{% url 'upload_form:download' %}"><button>一括ダウンロード</button></a> -->
+
+        {{ common }}.wavファイルから母音「{{ vowel }}」の波形を切り取りました
+        <form action="{% url 'upload_form:download' %}" method="POST">
+            {% csrf_token %}
+            <input name="vowel" type="hidden" value="{{ vowel }}">
+            <input name="common" type="hidden" value="{{ common }}">
+            <input type="submit" value="一括ダウンロード">
+        </form>
+
+
+        <a href="{% url 'upload_form:form' %}"><button>戻る</button></a>
+    </div>
+{% endblock content %}
