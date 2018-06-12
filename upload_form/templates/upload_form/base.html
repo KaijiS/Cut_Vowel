@@ -1,13 +1,24 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="ja">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="viewport" content="content">
-        <title>ファイルアップローダ</title>
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+        <link rel="stylesheet" href="{% static 'css/all.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <title>Vowel Extraction</title>
     </head>
     <body>
+        <header>
+            <h1><a href="{% url 'upload_form:form' %}">Vowel Extraction</a></h1>
+        </header>
+        <br>
+        <div class="all-content">
         {% block content %}
             {{ content }}
         {% endblock %}
+      </div>
     </body>
 </html>

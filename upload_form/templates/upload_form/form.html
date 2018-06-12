@@ -1,7 +1,30 @@
 {% extends "upload_form/base.html" %}
 
-{% block title %}アップローダサンプル{% endblock title %}
+{% block title %}音声ファイルアップロード{% endblock title %}
 {% block content %}
+<!-- <div align="center"> -->
+    <div class="sub_title">
+      ファイルアップロード
+    </div>
+    <div class="rule">
+      <div class="rule-title">ファイルの条件</div>
+      <div class="rule-content">
+        <ul>
+          <li>wavファイル</li>
+          <ul>
+            <li>サンプリング周波数:16000Hz</li>
+            <li>量子化bit: 16bit</li>
+            <li>チャンネル数:1 (モノラルのみ)</li>
+          </ul>
+          <li>txtファイル</li>
+          <ul>
+            <li>内容：音声ファイルの内容の読みを平仮名で記載</li>
+            <li>文字コード："UTF-8"</li>
+            <li>注意：「今日は」→「きょーわ」，「室蘭へ」→「むろらんえ」</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="file[]" multiple>
@@ -19,5 +42,5 @@
     {% if flag != 0 %}
       {{ comment }}
     {% endif %}
-
+<!-- </div> -->
 {% endblock content %}
