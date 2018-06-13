@@ -1,14 +1,21 @@
 {% extends "upload_form/base.html" %}
 
+{% block extrahead %}
+<script>
+
+</script>
+{% endblock extrahead %}
+
 {% block title %}音声ファイルアップロード{% endblock title %}
 {% block content %}
-<!-- <div align="center"> -->
     <div class="sub_title">
       ファイルアップロード
     </div>
-    <div class="rule">
-      <div class="rule-title">ファイルの条件</div>
-      <div class="rule-content">
+    <hr class="sub_title_line">
+    <div class="section">
+      <div class="section-title">ファイルの条件</div>
+      <div class="section-content">
+        <span class="under">ファイル名を揃えた</span>以下の2つのファイルを選択する
         <ul>
           <li>wavファイル</li>
           <ul>
@@ -25,22 +32,32 @@
         </ul>
       </div>
     </div>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file[]" multiple>
 
-        <select name="vowel">
-        <option value="a">あ</option>
-        <option value="i">い</option>
-        <option value="u">う</option>
-        <option value="e">え</option>
-        <option value="o">お</option>
-        </select>
+    <br>
+    <div class="section-title">アップロードの実行</div>
+    <div class="section-content">
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="select-file-zone">
+            <div class="file-messe">Ctr押しながら2種のファイルを選択</div>
+            <input type="file" name="file[]" accept="audio/wav,text/plain" multiple required>
+          </div>
 
-        <input type="submit" value="アップロード">
-    </form>
-    {% if flag != 0 %}
-      {{ comment }}
-    {% endif %}
-<!-- </div> -->
+          <div class="select-vowel-zone">
+            <div class="vowel-messe">抽出する母音を選択</div>
+            <select name="vowel">
+            <option value="a">あ</option>
+            <option value="i">い</option>
+            <option value="u">う</option>
+            <option value="e">え</option>
+            <option value="o">お</option>
+            </select>
+          </div>
+
+          <input type="submit" value="アップロード">
+      </form>
+      {% if flag != 0 %}
+        {{ comment }}
+      {% endif %}
+    </div>
 {% endblock content %}
