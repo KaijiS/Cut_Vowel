@@ -60,6 +60,7 @@ select{
 
 div .select-file-zone {
   float: left;
+  margin-right: 40px;
 }
 
 div .file-messe {
@@ -68,8 +69,89 @@ div .file-messe {
 
 div .select-vowel-zone {
   float: left;
+  margin-right: 100px;
 }
 
-div .vowel-messe{
+span .vowel-messe{
   font-size:14px;
+}
+
+div .upload-button {
+  float: left;
+  margin-top: 10px;
+}
+
+.square_btn_upload {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535;/*色*/
+    border-radius: 4px;/*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #d27d00;/*線色*/
+}
+
+.square_btn_upload:active {/*押したとき*/
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+
+.down_form {
+  float: left;
+  margin-top: 10px;
+  margin-left: 300px;
+  margin-right: 50px;
+}
+
+
+.square_btn_download{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.square_btn_download:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+
+
+div .back {
+  margin-top: 10px;
+}
+
+
+.back_button{
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    background: #ff8181;
+    color: #FFF;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #bd6565;
+    transition: .4s;
+}
+
+.back_button:active{
+    -ms-transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    border-bottom: none;
 }

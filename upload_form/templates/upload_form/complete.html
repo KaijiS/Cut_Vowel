@@ -2,20 +2,22 @@
 
 {% block title %}アップロード完了{% endblock title %}
 {% block content %}
-    <div align="center">
-        <h1 align="center">アップロード完了</h1>
-        <!-- <input name="vowel" type="hidden" value="{{ vowel }}">
-        <a href="{% url 'upload_form:download' %}"><button>一括ダウンロード</button></a> -->
+  <div class="sub_title">アップロード完了</div>
+  <hr class="sub_title_line">
 
-        {{ common }}.wavファイルから母音「{{ vowel }}」の波形を切り取りました
-        <form action="{% url 'upload_form:download' %}" method="POST">
-            {% csrf_token %}
-            <input name="vowel" type="hidden" value="{{ vowel }}">
-            <input name="common" type="hidden" value="{{ common }}">
-            <input type="submit" value="一括ダウンロード">
-        </form>
+  <div class="section-content">
+    {{ common }}.wavファイルから母音「{{ vowel }}」の波形を切り取りました<br>
+    <form action="{% url 'upload_form:download' %}" class="down_form" method="POST">
+        {% csrf_token %}
+        <input name="vowel" type="hidden" value="{{ vowel }}">
+        <input name="common" type="hidden" value="{{ common }}">
+        <input type="submit" class="square_btn_download" value="ZIPファイルダウンロード">
+    </form>
 
-
-        <a href="{% url 'upload_form:form' %}"><button>戻る</button></a>
+    <div class="back">
+      <a href="{% url 'upload_form:form' %}" class="back_button">戻る</a>
     </div>
+    <br>
+
+  </div>
 {% endblock content %}

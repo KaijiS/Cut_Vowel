@@ -44,7 +44,7 @@
           </div>
 
           <div class="select-vowel-zone">
-            <div class="vowel-messe">抽出する母音を選択</div>
+            <span class="vowel-messe">抽出する母音を選択　</span>
             <select name="vowel">
             <option value="a">あ</option>
             <option value="i">い</option>
@@ -54,10 +54,15 @@
             </select>
           </div>
 
-          <input type="submit" value="アップロード">
+          <div class="upload-button">
+            <input type="submit" class="square_btn_upload" value="アップロード">
+          </div>
+
       </form>
       {% if flag != 0 %}
         {{ comment }}
       {% endif %}
+      <br>
+      <br>
     </div>
 {% endblock content %}
