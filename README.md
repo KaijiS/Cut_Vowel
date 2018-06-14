@@ -35,12 +35,12 @@ webアプリ用ディレクトリで
 `git clone https://github.com/KaijiS/Cut_Vowel`  
  /Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl の49行目を編集
   ```perl:/Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl
-    ## julius executable
-    if ($^O =~ /MSWin/){
-      $juliusbin=".\\bin\\julius-4.3.1.exe";
-    } else {
-      $juliusbin="./bin/julius-4.3.1";  →  $juliusbin="/usr/local/bin/julius";
-    }
+  ## julius executable
+  if ($^O =~ /MSWin/){
+    $juliusbin=".\\bin\\julius-4.3.1.exe";
+  } else {
+    $juliusbin="./bin/julius-4.3.1";  →  $juliusbin="/usr/local/bin/julius";
+  }
   ```
   音響モデルを変更する場合は 53,54行目を編集 (monophoneの方が精度がいいらしい)
   ```perl:/Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl
