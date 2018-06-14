@@ -6,7 +6,7 @@
   <hr class="sub_title_line">
 
   <div class="section-content">
-    {{ common }}.wavファイルから母音「{{ vowel }}」の波形を切り取りました<br>
+    {{ common }}.wavファイルから母音「{{ vowel }}」の波形を切り取りました。<br>
     <form action="{% url 'upload_form:download' %}" class="down_form" method="POST">
         {% csrf_token %}
         <input name="vowel" type="hidden" value="{{ vowel }}">
