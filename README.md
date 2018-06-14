@@ -1,19 +1,21 @@
 # Cut_Vowel
 
-**音素ラベリングセグメンテーションを用いた母音波形抽出webアプリ**
+**音素自動セグメンテーションを用いた母音波形抽出webアプリ**
 
 ## 開発環境  
-- OS: ubuntu  
-- 使用したOSS: Julius  
+- OS: ubuntu 14.04LTS   
 - 開発言語:
-  - perl(Julius内)
-  - python3
+  - perl 5.18.2(Julius内)
+  - python3 3.4.3
+- 使用したツール:
+  - Julius 4.2.2
+  - pip3 10.0.1
 - 必要なライブラリ:
-  - numpy
-  - scipy
-  - Django(ウェブアプリケーションフレームワーク)
+  - numpy 1.13.3
+  - scipy 0.13.3
+  - Django 2.0.6(ウェブアプリケーションフレームワーク)
 
-## 環境構築，サーバ起動方法およびwebアプリアクセス方法(Ubuntu16.04)  
+## 環境構築，サーバ起動方法およびwebアプリアクセス方法(Ubuntu14.04)  
 1. 必要な言語およびライブラリのインストール  
 `sudo apt install perl`  
 `sudo apt install python3-pip`  
