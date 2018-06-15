@@ -18,7 +18,7 @@ def number_of_files(input_files):
     返り値：ファイル数2のとき:0, 2以外の時:-1
     """
     if len(input_files) != 2:
-        print("拡張子が「.wav」と「.txt」の2種類のみにしてください")
+        print("拡張子が「.wav」と「.txt」である2種類のみデータにしてください")
         return -1
     return 0
 
@@ -50,7 +50,7 @@ def extention(input_files):
 
     if flag == 1:
         print("拡張子が違います")
-        print("拡張子が「.wav」と「.txt」の2種類のみにしてください")
+        print("拡張子が「.wav」と「.txt」である2種類のみデータにしてください")
         return -1
 
     return 0
@@ -92,6 +92,6 @@ def Fs_check(common):
     wave,fs = wave_Rel.waveread(filename)
 
     if fs != 16000:
-        print("サンプリング周波数を16000Hzにしてください")
+        print("サンプリング周波数が16000Hzであるwavデータにしてください")
         return -1
     return 0

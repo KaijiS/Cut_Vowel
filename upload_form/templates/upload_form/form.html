@@ -10,7 +10,7 @@
 {% block content %}
     <div class="explain">
       <a href="https://github.com/julius-speech/segmentation-kit">
-        Juliusの音素自動セグメンテーション
+        Juliusの音素ラベリングセグメンテーション
       </a>
       を利用してアップロードされた音声データから母音を抽出し、抽出された母音の音声ファイルをダウンロードすることができます。
     </div>
@@ -65,10 +65,10 @@
           </div>
 
       </form>
+      <br>
       {% if flag != 0 %}
-        {{ comment }}
+        <br>
+        <div class="warning">{{ comment }}</div>
       {% endif %}
-      <br>
-      <br>
     </div>
 {% endblock content %}
