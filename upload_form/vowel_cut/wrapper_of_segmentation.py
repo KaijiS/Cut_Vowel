@@ -45,6 +45,7 @@ def wrap_segment():
     #ディレクトリを移動して実行
     subprocess.call( ["perl", "segment_julius.pl"], cwd=CUR_DIR+'/segmentation-kit' )
 
+    subprocess.call( ["rm", CUR_DIR+"/julius_output/*"] )
     subprocess.call( ["cp", CUR_DIR+"/segmentation-kit/wav/"+common+".log", CUR_DIR+"/julius_output/"] )
     subprocess.call( ["cp", CUR_DIR+"/segmentation-kit/wav/"+common+".lab", CUR_DIR+"/julius_output/"] )
 
