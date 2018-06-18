@@ -30,18 +30,18 @@
 `./configure`  
 `make`  
 `sudo make install`  
-/usr/local/bin/julius があることを確認
+/usr/local/bin/julius があることを確認 ・・・①
 
 3. 本アプリをクローン  
 webアプリ用ディレクトリで  
 `git clone https://github.com/KaijiS/Cut_Vowel`  
- /Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl の49行目を編集
+ /Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl の49行目を①に合わせる
   ```perl:/Cut_Vowel/upload_form/vowel_cut/segmentation-kit/segment_julius.pl
   ## julius executable
   if ($^O =~ /MSWin/){
     $juliusbin=".\\bin\\julius-4.3.1.exe";
   } else {
-    $juliusbin="./bin/julius-4.3.1";  →  $juliusbin="/usr/local/bin/julius";
+    $juliusbin="/usr/local/bin/julius"; ##ココ
   }
   ```
   音響モデルを変更する場合は 53,54行目を編集 (monophoneの方が精度がいいらしい)
